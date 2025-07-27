@@ -4,8 +4,16 @@ This is my personal **Hyprland** setup. I'm not a big fan of the excessive trans
 
 I use Hyprland as my main operating system, so I've tuned it to be comfortable, functional, and visually balanced for daily use. If you have any suggestions or better ideas, feel free to modify or adapt this rice to your liking 😊.
 
-![Hyprland Screenshot](./screenshots/hyprland.png)
-
+![Hyprland Screenshot](./Screenshots/hyprshot1.png)
+![Hyprland Screenshot](./Screenshots/hyprshot2.png)
+![Hyprland Screenshot](./Screenshots/hyprshot3.png)
+![Hyprland Screenshot](./Screenshots/hyprshot4.png)
+![Hyprland Screenshot](./Screenshots/hyprshot5.png)
+![Hyprland Screenshot](./Screenshots/hyprshot6.png)
+![Hyprland Screenshot](./Screenshots/hyprshot7.png)
+![Hyprland Screenshot](./Screenshots/hyprshot8.png)
+![Hyprland Screenshot](./Screenshots/hyprshot9.png)
+![Hyprland Screenshot](./Screenshots/lockscreen.png)
 ---
 
 ## 📦 Main Components
