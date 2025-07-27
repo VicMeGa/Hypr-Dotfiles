@@ -53,8 +53,7 @@ git clone https://github.com/your-username/hyprland-config.git ~/.config
 3. Move config files
 
 ```bash
-cd Hypr-Dotfiles
-cd .config
+cd Hypr-Dotfiles/config
 mv * ~/.config
 ```
 

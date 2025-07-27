@@ -1,0 +1,21 @@
+@define-color pink rgb(245, 194, 231); @define-color crust rgb(17, 17, 27); @define-color surface0 #313244; @define-color text rgb(205, 214, 244);
+/* widget vpn */
+.widget-buttons-grid>flowbox>flowboxchild:nth-child(4)>button{background: @transparent; border: 2px solid @surface0}
+.widget-buttons-grid>flowbox>flowboxchild:nth-child(4)>button:hover{background: @transparent; border: 2px solid @pink}
+.widget-buttons-grid>flowbox>flowboxchild:nth-child(4)>button>label{color: @text;}
+.widget-buttons-grid>flowbox>flowboxchild:nth-child(4)>button:hover>label{color: @pink;}
+/* widget mute */
+.widget-buttons-grid>flowbox>flowboxchild:nth-child(2)>button{background: @transparent; border: 2px solid @surface0}
+.widget-buttons-grid>flowbox>flowboxchild:nth-child(2)>button:hover{background: @transparent; border: 2px solid @pink}
+.widget-buttons-grid>flowbox>flowboxchild:nth-child(2)>button>label{color: @text;}
+.widget-buttons-grid>flowbox>flowboxchild:nth-child(2)>button:hover>label{color: @pink;}
+/* widget wifi */
+.widget-buttons-grid>flowbox>flowboxchild:nth-child(1)>button{background: @pink; border: 2px solid @pink}
+.widget-buttons-grid>flowbox>flowboxchild:nth-child(1)>button:hover{background: @pink; border: 2px solid @pink}
+.widget-buttons-grid>flowbox>flowboxchild:nth-child(1)>button>label{color: @crust;}
+.widget-buttons-grid>flowbox>flowboxchild:nth-child(1)>button:hover>label{color: @crust;}
+/* widget bluetooth */
+.widget-buttons-grid>flowbox>flowboxchild:nth-child(3)>button{background: @transparent; border: 2px solid @surface0}
+.widget-buttons-grid>flowbox>flowboxchild:nth-child(3)>button:hover{background: @transparent; border: 2px solid @pink}
+.widget-buttons-grid>flowbox>flowboxchild:nth-child(3)>button>label{color: @text;}
+.widget-buttons-grid>flowbox>flowboxchild:nth-child(3)>button:hover>label{color: @pink;}

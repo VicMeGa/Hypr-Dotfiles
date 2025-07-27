@@ -1,0 +1,139 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 32,
+  "spacing": 2,
+  "passthrough": false,
+  "fixed-center": true,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["mpris"],
+  "modules-right": [
+  //  "cpu",
+  //  "memory",
+    "pulseaudio",
+  //  "backlight",
+    "battery",
+    "clock",
+    "clock#simpleclock",
+    "custom/notification",
+    "tray",
+    "custom/power"
+  ],
+  "custom/spotify": {
+    "format": "  {}",
+    "return-type": "json",
+    "on-click": "playerctl -p spotify play-pause",
+    "on-click-right": "spotifatius toggle-liked",
+    "on-click-middle": "playerctl -p spotify next",
+    "exec": "spotifatius monitor"
+  },
+  "mpris": {
+    "weight":8,
+    "dynamic-order": ["artist", "title"],
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "max-length": 25,
+    "status-icons": {
+      "paused": ""
+    },
+    "player-icons": {
+      "default": ""
+    }
+  },
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{id}",
+    "all-outputs": true,
+    "disable-scroll": false,
+    "active-only": false
+  },
+  "hyprland/window": {
+    "format": "{title}"
+  },
+  "tray": {
+    "show-passive-items": true,
+    "spacing": 10
+  },
+  "clock#simpleclock": {
+    "tooltip": false,
+    "format": " {:%I:%M %p}"
+  },
+  "clock": {
+    "format": " {:L%a %d %b}",
+    "calendar": {
+      "format": {
+        "days": "<span weight='normal'>{}</span>",
+        "months": "<span color='#cdd6f4'><b>{}</b></span>",
+        "today": "<span color='#f38ba8' weight='700'><u>{}</u></span>",
+        "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+        "weeks": "<span color='#a6e3a1'><b>W{}</b></span>"
+      },
+      "mode": "month",
+      "mode-mon-col": 1,
+      "on-scroll": 1
+    },
+    "tooltip-format": "<span color='#cdd6f4' font='Lexend 16'><tt><small>{calendar}</small></tt></span>"
+  },
+  //"cpu": {
+  //  "format": " {usage}%",
+  //  "tooltip": true,
+  //  "interval": 1
+  //},
+  //"memory": {
+  //  "format": " {used:0.1f}Gi"
+  //},
+  "pulseaudio": {
+    "format": "{icon}{volume}%",
+    "format-muted": " muted",
+    "format-icons": {
+      "headphone": "",
+      "default": [" ", " ", " "]
+    },
+    "on-click": "pavucontrol"
+  },
+  "custom/sep": {
+    "format": "|",
+    "tooltip": false
+  },
+  "custom/power": {
+    "tooltip": false,
+    "on-click": "systemctl poweroff",
+    "format": "⏻"
+  },
+  "custom/notification": {
+    "escape": true,
+    "exec": "swaync-client -swb",
+    "exec-if": "which swaync-client",
+    "format": "{icon}",
+    "format-icons": {
+      "none": "󰅺",
+      "notification": "󰡟"
+    },
+     "on-click": "swaync-client -t",
+    "return-type": "json",
+    "tooltip": false
+  },
+  //"backlight": {
+  //  "device": "intel_backlight",
+  //  "format": "<span>{icon}</span>{percent}% ",
+  //  "tooltip": true,
+  //  "tooltip-format": "Brillo: {percent}%",
+  //  "format-icons": [
+  //    "<span>󰃞 </span>",  // 暗 - 深灰
+  //    "<span>󰃝 </span>",  // 中 - 灰
+  //    "<span>󰃟 </span>",  // 亮 - 柠檬黄
+  //    "<span>󰃠 </span>"   // 最亮 - 金色
+  //  ]
+  //},
+   "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "<span>{icon} </span>{capacity}% ",
+    "format-charging": "󱐋 {capacity}%",
+	  "interval": 1,
+    "format-icons": ["󰂎", "󰁼", "󰁿", "󰂁", "󰁹"],
+    "tooltip": true
+  }
+}
