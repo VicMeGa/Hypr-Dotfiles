@@ -8,15 +8,15 @@
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["mpris"],
   "modules-right": [
+    "tray",
   //  "cpu",
   //  "memory",
     "pulseaudio",
   //  "backlight",
-    "battery",
-    "clock",
-    "clock#simpleclock",
-    "custom/notification",
-    "tray",
+  "clock",
+  "clock#simpleclock",
+  "custom/notification",
+  "battery",
     "custom/power"
   ],
   "custom/spotify": {
@@ -134,6 +134,7 @@
     "format-charging": "󱐋 {capacity}%",
 	  "interval": 1,
     "format-icons": ["󰂎", "󰁼", "󰁿", "󰂁", "󰁹"],
-    "tooltip": true
+    "tooltip": true,
+    "on-update": "./scripts/battery_notify.sh {capacity} {status}"
   }
 }
