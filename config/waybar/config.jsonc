@@ -13,12 +13,18 @@
   //  "memory",
     "pulseaudio",
   //  "backlight",
-  "clock",
-  "clock#simpleclock",
-  "custom/notification",
+  "group/group-1",
   "battery",
-    "custom/power"
+  "custom/notification",
+  "custom/power"
   ],
+  "group/group-1":{
+    "orientation": "horizontal",
+    "modules": [
+      "clock",
+      "clock#simpleclock"
+    ]
+  },
   "custom/spotify": {
     "format": "  {}",
     "return-type": "json",
@@ -56,10 +62,13 @@
   },
   "clock#simpleclock": {
     "tooltip": false,
-    "format": " {:%I:%M %p}"
+    //"format": " {:%I:%M %p}"
+    "format": "{:%I:%M %p}"
   },
   "clock": {
-    "format": " {:L%a %d %b}",
+    //"format": " {:L%a %d %b}",
+    //88"format": " {:L%a %d %b}",
+    "format": "{:L%d/%m/%Y}",
     "calendar": {
       "format": {
         "days": "<span weight='normal'>{}</span>",
@@ -126,6 +135,7 @@
   //  ]
   //},
    "battery": {
+    "on-update": "~/.config/waybar/scripts/battery_notify.sh {capacity} {status}",
     "states": {
       "warning": 30,
       "critical": 15
@@ -134,7 +144,6 @@
     "format-charging": "󱐋 {capacity}%",
 	  "interval": 1,
     "format-icons": ["󰂎", "󰁼", "󰁿", "󰂁", "󰁹"],
-    "tooltip": true,
-    "on-update": "./scripts/battery_notify.sh {capacity} {status}"
+    "tooltip": true
   }
 }
