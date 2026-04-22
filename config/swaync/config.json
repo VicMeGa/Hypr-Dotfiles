@@ -1,82 +1,83 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
+
   "ignore-gtk-theme": true,
+
   "positionX": "right",
   "positionY": "top",
   "layer": "overlay",
   "control-center-layer": "top",
   "layer-shell": true,
-  "layer-shell-cover-screen": true,
-  "cssPriority": "application", 
-  "control-center-margin-top": 0,
-  "control-center-margin-bottom": 0,
-  "control-center-margin-right": 0,
+  "layer-shell-cover-screen": false,
+
+  "cssPriority": "application",
+
+  "control-center-margin-top": 8,
+  "control-center-margin-bottom": 8,
+  "control-center-margin-right": 8,
   "control-center-margin-left": 0,
-  "notification-2fa-action": true,
-  "notification-inline-replies": false,
-  "notification-body-image-height": 100,
-  "notification-body-image-width": 200,
-  "timeout": 10,
-  "timeout-low": 5,
-  "timeout-critical": 0,
-  "fit-to-screen": true,
-  "relative-timestamps": true,
+
   "control-center-width": 500,
   "control-center-height": 600,
   "notification-window-width": 500,
-  "keyboard-shortcuts": true,
-  "notification-grouping": true,
-  "image-visibility": "when-available",
+
+  "fit-to-screen": true,
   "transition-time": 200,
+
+  "timeout": 10,
+  "timeout-low": 5,
+  "timeout-critical": 0,
+
+  "notification-2fa-action": true,
+  "notification-inline-replies": true,
+  "notification-grouping": true,
+  "notification-body-image-height": 100,
+  "notification-body-image-width": 200,
+  "image-visibility": "when-available",
+
+  "relative-timestamps": true,
   "hide-on-clear": false,
   "hide-on-action": true,
-  "text-empty": "No Notifications",
+  "keyboard-shortcuts": true,
+  "text-empty": "Sin notificaciones",
   "script-fail-notify": true,
-  "scripts": {
-    "example-script": {
-      "exec": "echo 'Do something...'",
-      "urgency": "Normal"
-    },
-    "example-action-script": {
-      "exec": "echo 'Do something actionable!'",
-      "urgency": "Normal",
-      "run-on": "action"
-    }
-  },
+
   "notification-visibility": {
-    "example-name": {
+    "spotify-low": {
       "state": "muted",
       "urgency": "Low",
       "app-name": "Spotify"
     }
   },
+
   "widgets": [
+    "title",
     "backlight",
     "volume",
+    "mpris",
     "buttons-grid",
     "inhibitors",
-    "title",
     "dnd",
-    "notifications",
-    "mpris"
+    "notifications"
   ],
+
   "widget-config": {
+    "title": {
+      "text": "Centro de control",
+      "clear-all-button": true,
+      "button-text": "Limpiar todo"
+    },
     "inhibitors": {
-      "text": "Inhibitors",
-      "button-text": "Clear All",
+      "text": "Inhibidores",
+      "button-text": "Limpiar todo",
       "clear-all-button": true
     },
-    "title": {
-      "text": "Notifications",
-      "clear-all-button": true,
-      "button-text": "Clear All"
-    },
     "dnd": {
-      "text": "Do Not Disturb"
+      "text": "No molestar"
     },
     "label": {
       "max-lines": 5,
-      "text": "Label Text"
+      "text": ""
     },
     "mpris": {
       "autohide": true,
@@ -84,40 +85,42 @@
       "loop-carousel": true
     },
     "volume": {
-			"label": "",
+      "label": "󰕾",
       "tooltip": true
-		},
-		"backlight": {
-			"label": "󰃠",
-			"device": "amdgpu_bl1",
+    },
+    "backlight": {
+      "label": "󰃠",
+      "device": "amdgpu_bl1",
       "tooltip": true
-		},
+    },
     "buttons-grid": {
-      "buttons-per-row": 7,
+      "buttons-per-row": 6,
       "actions": [
        {
-					"label": "",
-					"command": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-					"type": "toggle"
-				},
-       {
-  "type": "toggle",
-  "label": "",
-  "command": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-  "status-command": "pactl get-source-mute @DEFAULT_SOURCE@ | grep -q 'yes' && echo muted || echo unmuted",
-  "status": {
-    "muted": {
-      "label": ""  
-    },
-    "unmuted": {
-      "label": ""  
-    }
-  }
-},
+          "label": "󰖁",
+          "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+          "type": "toggle",
+          "status-command": "pactl get-sink-mute @DEFAULT_SINK@ | grep -q 'yes' && echo muted || echo unmuted",
+          "status": {
+            "muted":   { "label": "󰖁" },
+            "unmuted": { "label": "󰕾" }
+          }
+        },
         {
-					"label": "󰤨",
-					"command": "nm-connection-editor"
-				}
+          "type": "toggle",
+          "label": "󰍬",
+          "command": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+          "status-command": "pactl get-source-mute @DEFAULT_SOURCE@ | grep -q 'yes' && echo muted || echo unmuted",
+          "status": {
+            "muted":   { "label": "󰍭" },
+            "unmuted": { "label": "󰍬" }
+          }
+        },
+        {
+          "label": "󰤨",
+          "command": "nm-connection-editor"
+        },
+    
       ]
     }
   }

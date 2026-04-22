@@ -29,18 +29,15 @@ template = """* {{
 }}
 
 window#waybar {{
-    transition-property: transparency;
-    transition-duration: 0.5s;
     background-color: transparent;
-    margin-top: 9px;
-    margin-left: 6px;
-    margin-right: 6px;
-    border-radius: 0px;
-    border-width: 0px;
+    margin: 9px 6px 0;
+    border-radius: 0;
+    transition-property: background-color;
+    transition-duration: 0.5s;
 }}
 
+/* ── WORKSPACES ─────────────────────────────────── */
 #workspaces {{
-    margin-left: 0.8rem;
     background-color: {background};
     margin: 0.4rem 0.25rem;
     border-radius: 8px;
@@ -52,11 +49,12 @@ window#waybar {{
     border-radius: 6px;
     background-color: {color0};
     color: {foreground};
+    transition: background-color 0.2s, color 0.2s;
 }}
 
 #workspaces button:hover {{
-    color: {background};
     background-color: {foreground};
+    color: {background};
 }}
 
 #workspaces button.active {{
@@ -69,7 +67,7 @@ window#waybar {{
     color: {background};
 }}
 
-
+/* ── MÓDULOS COMUNES ────────────────────────────── */
 #pulseaudio,
 #custom-logo,
 #custom-power,
@@ -79,6 +77,7 @@ window#waybar {{
 #cpu,
 #backlight,
 #tray,
+#custom-network,
 #memory,
 #window,
 #mpris {{
@@ -88,20 +87,26 @@ window#waybar {{
     background-color: {color0};
 }}
 
+/* ── CLOCK ──────────────────────────────────────── */
 #clock {{
     padding: 0.2rem 0.3rem;
     margin: 0.1rem 0.1rem;
     border-radius: 6px;
-    /*background-color: {color0};*/
+    color: {color5};
 }}
 
+#clock.simpleclock {{
+    color: {color2};
+}}
+
+/* ── GROUP ──────────────────────────────────────── */
 #group-1 {{
     background-color: {background};
     margin: 0.4rem 0.25rem;
-    /*padding: 0.2rem 0.6rem;*/
     border-radius: 8px;
 }}
 
+/* ── MPRIS ──────────────────────────────────────── */
 #mpris.playing {{
     color: {color10};
 }}
@@ -110,71 +115,35 @@ window#waybar {{
     color: {color8};
 }}
 
+/* ── SEPARADOR ──────────────────────────────────── */
 #custom-sep {{
-    padding: 0px;
+    padding: 0;
     color: {color8};
 }}
 
+/* ── WINDOW VACÍO ───────────────────────────────── */
 window#waybar.empty #window {{
     background-color: transparent;
 }}
 
-#cpu {{
-    color: {color3};
-}}
+/* ── COLORES POR MÓDULO ─────────────────────────── */
+#cpu          {{ color: {color3};     }}
+#memory       {{ color: {color4};     }}
+#pulseaudio   {{ color: {color6};     }}
+#backlight    {{ color: {color7};     }}
+#battery      {{ color: {color10};    }}
+#window       {{ color: {foreground}; }}
+#custom-logo  {{ color: {color2};     }}
+#custom-power {{ color: {color9};     }}
 
-#memory {{
-    color: {color4};
-}}
+#custom-notification {{ color: {foreground}; }}
+#custom-network  {{ color: {color8}; }}
 
-#clock {{
-    color: {color5};
-}}
+#pulseaudio.muted  {{ color: {color8}; }}
+#battery.critical  {{ color: {color9}; }}
+#battery.warning   {{ color: {color11}; }}
 
-#clock.simpleclock {{
-    color: {color2};
-}}
-
-#window {{
-    color: {foreground};
-}}
-
-#pulseaudio {{
-    color: {color6};
-}}
-
-#pulseaudio.muted {{
-    color: {color8};
-}}
-
-#custom-logo {{
-    color: {color2};
-}}
-
-#custom-power {{
-    color: {color9};
-}}
-
-#backlight {{
-    color: {color7};
-}}
-
-#battery {{
-    color: {color10};
-}}
-
-#battery.critical {{
-    color: {color9};
-}}
-
-#battery.warning {{
-    color: {color11};
-}}
-
-#custom-notification {{
-    color: {foreground};
-}}
-
+/* ── TOOLTIP ────────────────────────────────────── */
 tooltip {{
     background-color: {background};
     border: 2px solid {color2};

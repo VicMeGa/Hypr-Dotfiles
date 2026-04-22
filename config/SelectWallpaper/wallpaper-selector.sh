@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 
 WALLPAPER_DIR="$HOME/Image/Fondo"

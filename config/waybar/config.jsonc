@@ -11,12 +11,14 @@
     "tray",
   //  "cpu",
   //  "memory",
+   "custom/network",
     "pulseaudio",
   //  "backlight",
   "group/group-1",
   "battery",
   "custom/notification",
-  "custom/power"
+  "custom/power",
+
   ],
   "group/group-1":{
     "orientation": "horizontal",
@@ -106,7 +108,7 @@
   },
   "custom/power": {
     "tooltip": false,
-    "on-click": "systemctl poweroff",
+    "on-click": "wlogout",
     "format": "⏻"
   },
   "custom/notification": {
@@ -135,7 +137,7 @@
   //  ]
   //},
    "battery": {
-    "on-update": "~/.config/waybar/scripts/battery_notify.sh {capacity} {status}",
+    "on-update": "",
     "states": {
       "warning": 30,
       "critical": 15
@@ -145,5 +147,31 @@
 	  "interval": 1,
     "format-icons": ["󰂎", "󰁼", "󰁿", "󰂁", "󰁹"],
     "tooltip": true
+  },
+  "custom/network": {
+    "exec": "hypr-network-manager --status",
+    "on-click": "hypr-network-manager",
+    "on-click-right": "hypr-network-manager --toggle-wifi",
+    "interval": 10,
+    "return-type": "json",
+    "tooltip": true,
+    "format": "󰤨",
+   "signal": 8
   }
+  //"custom/network": {
+  //  "exec": "hypr-network-manager --status 2>/dev/null",
+  //  "on-click": "hypr-network-manager",
+  //  "on-click-right": "hypr-network-manager --toggle-wifi",
+  //  "interval": 10,
+  //  "return-type": "json",
+  //  "tooltip": true,
+  //  "format": "{icon} {text}",
+  //  "format-icons": {
+  //      "disconnected": "󰤭",
+   //     "wifi": "󰤨",
+   //     "ethernet": "󰈀",
+   //     "disabled": "󰤮"
+   // },
+   // "signal": 8
+  //}
 }
