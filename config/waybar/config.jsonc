@@ -8,17 +8,25 @@
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["mpris"],
   "modules-right": [
+    "tray",
   //  "cpu",
   //  "memory",
+   "custom/network",
     "pulseaudio",
   //  "backlight",
-    "battery",
-    "clock",
-    "clock#simpleclock",
-    "custom/notification",
-    "tray",
-    "custom/power"
+  "group/group-1",
+  "battery",
+  "custom/notification",
+  "custom/power",
+
   ],
+  "group/group-1":{
+    "orientation": "horizontal",
+    "modules": [
+      "clock",
+      "clock#simpleclock"
+    ]
+  },
   "custom/spotify": {
     "format": "  {}",
     "return-type": "json",
@@ -56,10 +64,13 @@
   },
   "clock#simpleclock": {
     "tooltip": false,
-    "format": " {:%I:%M %p}"
+    //"format": " {:%I:%M %p}"
+    "format": "{:%I:%M %p}"
   },
   "clock": {
-    "format": " {:L%a %d %b}",
+    //"format": " {:L%a %d %b}",
+    //88"format": " {:L%a %d %b}",
+    "format": "{:L%d/%m/%Y}",
     "calendar": {
       "format": {
         "days": "<span weight='normal'>{}</span>",
@@ -97,7 +108,7 @@
   },
   "custom/power": {
     "tooltip": false,
-    "on-click": "systemctl poweroff",
+    "on-click": "wlogout",
     "format": "⏻"
   },
   "custom/notification": {
@@ -126,6 +137,7 @@
   //  ]
   //},
    "battery": {
+    "on-update": "",
     "states": {
       "warning": 30,
       "critical": 15
@@ -135,5 +147,31 @@
 	  "interval": 1,
     "format-icons": ["󰂎", "󰁼", "󰁿", "󰂁", "󰁹"],
     "tooltip": true
+  },
+  "custom/network": {
+    "exec": "hypr-network-manager --status",
+    "on-click": "hypr-network-manager",
+    "on-click-right": "hypr-network-manager --toggle-wifi",
+    "interval": 10,
+    "return-type": "json",
+    "tooltip": true,
+    "format": "󰤨",
+   "signal": 8
   }
+  //"custom/network": {
+  //  "exec": "hypr-network-manager --status 2>/dev/null",
+  //  "on-click": "hypr-network-manager",
+  //  "on-click-right": "hypr-network-manager --toggle-wifi",
+  //  "interval": 10,
+  //  "return-type": "json",
+  //  "tooltip": true,
+  //  "format": "{icon} {text}",
+  //  "format-icons": {
+  //      "disconnected": "󰤭",
+   //     "wifi": "󰤨",
+   //     "ethernet": "󰈀",
+   //     "disabled": "󰤮"
+   // },
+   // "signal": 8
+  //}
 }

@@ -1,0 +1,47 @@
+*{
+    background: transparent;
+    background-alt: transparent;
+    background-color: transparent;
+    foreground: transparent;
+    urgent:     transparent;
+    text-color: transparent;
+}
+
+configuration{
+    font: "JetBrainsMono Nerd Font 12";
+    show-icons: true;
+    slidebar-mode:true;
+    fixed-height: false;
+    
+}
+
+window {
+    height: 60%;
+    width: 80%;
+    background-color: rgba(30, 30, 46, 0.5);
+}
+
+listview {
+    columns: 4;
+    spacing: 20px;
+    padding: 20px;
+    scrollbar: true;
+    layout: vertical;
+    
+}
+
+element-icon {
+    size: 128px;
+}
+
+element-text {
+    horizontal-align: 0.5;
+    color: white;
+}
+
+element-text selected {
+    enabled:false;
+    
+    background-color: rgba(255, 255, 255, 0.8);
+    text-color: rgba(30, 30, 46, 1);
+}

@@ -1,54 +1,51 @@
 * {
-  min-height: 0;
-  min-width: 0;
-  font-family: Lexend, "JetBrainsMono NFP";
-  font-size: 13px;
-  font-weight: 600;
+    min-height: 0;
+    min-width: 0;
+    font-family: Lexend, "JetBrainsMono NFP";
+    font-size: 13px;
+    font-weight: 700;
 }
 
 window#waybar {
-  transition-property: background-color;
-  transition-duration: 0.5s;
-  /* background-color: #1e1e2e; */
-  /* background-color: #181825; */
-  /*background-color: #11111b;*/
-  background-color: rgba(24, 24, 37, 0.6);
-  margin-top: 9px; /* 外部间距增加 */
-  margin-left: 6px; /* 外部间距增加 */
-  margin-right: 6px; /* 外部间距增加 */
-  border-radius: 0px;
-  border-width: 0px;
+    background-color: transparent;
+    margin: 9px 6px 0;
+    border-radius: 0;
+    transition-property: background-color;
+    transition-duration: 0.5s;
 }
 
+/* ── WORKSPACES ─────────────────────────────────── */
 #workspaces {
-    margin-left: 0.8rem;
+    background-color: #251f31;
+    margin: 0.4rem 0.25rem;
+    border-radius: 8px;
 }
 
 #workspaces button {
-  padding: 0.3rem 0.6rem;
-  margin: 0.4rem 0.25rem;
-  border-radius: 6px;
-  /* background-color: #181825; */
-  background-color: #1e1e2e;
-  color: #cdd6f4;
+    padding: 0.2rem 0.6rem;
+    margin: 0.4rem 0.25rem;
+    border-radius: 6px;
+    background-color: #251f31;
+    color: #cccfdb;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 #workspaces button:hover {
-  color: #1e1e2e;
-  background-color: #cdd6f4;
+    background-color: #cccfdb;
+    color: #251f31;
 }
 
 #workspaces button.active {
-  background-color: #1e1e2e;
-  color: #89b4fa;
+    background-color: #6E97C5;
+    color: #251f31;
 }
 
 #workspaces button.urgent {
-  background-color: #1e1e2e;
-  color: #f38ba8;
+    background-color: #6E97C5;
+    color: #251f31;
 }
 
-#clock,
+/* ── MÓDULOS COMUNES ────────────────────────────── */
 #pulseaudio,
 #custom-logo,
 #custom-power,
@@ -58,82 +55,75 @@ window#waybar {
 #cpu,
 #backlight,
 #tray,
+#custom-network,
 #memory,
 #window,
 #mpris {
-  padding: 0.3rem 0.6rem;
-  margin: 0.4rem 0.25rem;
-  border-radius: 6px;
-  /* background-color: #181825; */
-  background-color: #1e1e2e;
+    padding: 0.2rem 0.6rem;
+    margin: 0.4rem 0.25rem;
+    border-radius: 6px;
+    background-color: #251f31;
 }
 
-#mpris.playing {
-  color: #a6e3a1;
-}
-
-#mpris.paused {
-  color: #9399b2;
-}
-
-#custom-sep {
-  padding: 0px;
-  color: #585b70;
-}
-
-window#waybar.empty #window {
-  background-color: transparent;
-}
-
-#cpu {
-  color: #94e2d5;
-}
-
-#memory {
-  color: #cba6f7;
-}
-
+/* ── CLOCK ──────────────────────────────────────── */
 #clock {
-  color: #74c7ec;
+    padding: 0.2rem 0.3rem;
+    margin: 0.1rem 0.1rem;
+    border-radius: 6px;
+    color: #D8C5BF;
 }
 
 #clock.simpleclock {
-  color: #89b4fa;
+    color: #7DA1C8;
 }
 
-#window {
-  color: #cdd6f4;
+/* ── GROUP ──────────────────────────────────────── */
+#group-1 {
+    background-color: #251f31;
+    margin: 0.4rem 0.25rem;
+    border-radius: 8px;
 }
 
-#pulseaudio {
-  color: #b4befe;
+/* ── MPRIS ──────────────────────────────────────── */
+#mpris.playing {
+    color: #7DA1C8;
 }
 
-#pulseaudio.muted {
-  color: #a6adc8;
+#mpris.paused {
+    color: #8e9099;
 }
 
-#custom-logo {
-  color: #89b4fa;
+/* ── SEPARADOR ──────────────────────────────────── */
+#custom-sep {
+    padding: 0;
+    color: #8e9099;
 }
 
-#custom-power {
-  color: #f38ba8;
+/* ── WINDOW VACÍO ───────────────────────────────── */
+window#waybar.empty #window {
+    background-color: transparent;
 }
 
-#backlight {
-  color: #ffffff
-}
+/* ── COLORES POR MÓDULO ─────────────────────────── */
+#cpu          { color: #A09AB5;     }
+#memory       { color: #D3B4B3;     }
+#pulseaudio   { color: #90AACB;     }
+#backlight    { color: #cccfdb;     }
+#battery      { color: #7DA1C8;    }
+#window       { color: #cccfdb; }
+#custom-logo  { color: #7DA1C8;     }
+#custom-power { color: #6E97C5;     }
 
-#battery {
-  color: #28CD41;
-}
+#custom-notification { color: #cccfdb; }
+#custom-network  { color: #8e9099; }
 
-#custom-notification {
-  color: #ffffff;
-}
+#pulseaudio.muted  { color: #8e9099; }
+#battery.critical  { color: #6E97C5; }
+#battery.warning   { color: #A09AB5; }
 
+/* ── TOOLTIP ────────────────────────────────────── */
 tooltip {
-  background-color: #181825;
-  border: 2px solid #89b4fa;
+    background-color: #251f31;
+    border: 2px solid #7DA1C8;
 }
+

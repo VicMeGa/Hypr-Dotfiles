@@ -1,0 +1,146 @@
+/* Tema generado automáticamente con pywal */
+/* Generado el: 2025-08-09 21:51:11 */
+/* Wallpaper:  */
+
+* {
+    min-height: 0;
+    min-width: 0;
+    font-family: Lexend, "JetBrainsMono NFP";
+    font-size: 13px;
+    font-weight: 600;
+}
+
+window#waybar {
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    background-color: rgba(, 0.6);
+    margin-top: 9px;
+    margin-left: 6px;
+    margin-right: 6px;
+    border-radius: 0px;
+    border-width: 0px;
+}
+
+#workspaces {
+    margin-left: 0.8rem;
+}
+
+#workspaces button {
+    padding: 0.3rem 0.6rem;
+    margin: 0.4rem 0.25rem;
+    border-radius: 6px;
+    background-color: ;
+    color: ;
+}
+
+#workspaces button:hover {
+    color: ;
+    background-color: ;
+}
+
+#workspaces button.active {
+    background-color: ;
+    color: ;
+}
+
+#workspaces button.urgent {
+    background-color: ;
+    color: ;
+}
+
+#clock,
+#pulseaudio,
+#custom-logo,
+#custom-power,
+#custom-spotify,
+#custom-notification,
+#battery,
+#cpu,
+#backlight,
+#tray,
+#memory,
+#window,
+#mpris {
+    padding: 0.3rem 0.6rem;
+    margin: 0.4rem 0.25rem;
+    border-radius: 6px;
+    background-color: ;
+}
+
+#mpris.playing {
+    color: ;
+}
+
+#mpris.paused {
+    color: ;
+}
+
+#custom-sep {
+    padding: 0px;
+    color: ;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+#cpu {
+    color: ;
+}
+
+#memory {
+    color: ;
+}
+
+#clock {
+    color: ;
+}
+
+#clock.simpleclock {
+    color: ;
+}
+
+#window {
+    color: ;
+}
+
+#pulseaudio {
+    color: ;
+}
+
+#pulseaudio.muted {
+    color: ;
+}
+
+#custom-logo {
+    color: ;
+}
+
+#custom-power {
+    color: ;
+}
+
+#backlight {
+    color: ;
+}
+
+#battery {
+    color: ;
+}
+
+#battery.critical {
+    color: ;
+}
+
+#battery.warning {
+    color: ;
+}
+
+#custom-notification {
+    color: ;
+}
+
+tooltip {
+    background-color: ;
+    border: 2px solid ;
+}

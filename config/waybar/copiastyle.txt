@@ -1,121 +1,149 @@
-/* 全局设置 */
+
+
 * {
-  font-family: "CaskaydiaCove Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Free Solid";
-  font-weight: bold;
-  font-size: 16px;
-  color: #dcdfe1;
+  min-height: 0;
+  min-width: 0;
+  font-family: Lexend, "JetBrainsMono NFP";
+  font-size: 13px;
+  font-weight: 600;
 }
 
-/* 透明 Waybar 背景 */
-#waybar {
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-  box-shadow: none;
-}
-
-/* 所有模块统一风格 */
-#workspaces,
-#window,
-#tray{
-  /*background-color: rgba(29,31,46, 0.95);*/
-  background-color: rgba(15,27,53,0.9);
-  padding: 4px 6px; /* 保持内部间距 */
-  margin-top: 6px; /* 外部间距增加 */
+window#waybar {
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  /* background-color: #1e1e2e; */
+  /* background-color: #181825; */
+  /*background-color: #11111b;*/
+  background-color: rgba(24, 24, 37, 0.6);
+  margin-top: 9px; /* 外部间距增加 */
   margin-left: 6px; /* 外部间距增加 */
   margin-right: 6px; /* 外部间距增加 */
-  border-radius: 10px;
+  border-radius: 0px;
   border-width: 0px;
 }
 
-#clock,
-#custom-power{
-  background-color: rgba(15,27,53,0.9);
-  margin-top: 6px; /* 与屏幕顶部留出距离 */
-  margin-right: 6px;
-  /*margin-bottom: 4px;*/
-  padding: 4px 2px; /* 保持内部间距 */
-  border-radius: 0 10px 10px 0;
-  border-width: 0px;
+#workspaces {
+    margin-left: 0.8rem;
 }
 
-#network,
-#custom-lock{
-  background-color: rgba(15,27,53,0.9);
-  margin-top: 6px; /* 与屏幕顶部留出距离 */
-  margin-left: 6px;
-  /*margin-bottom: 4px;*/
-  padding: 4px 2px; /* 保持内部间距 */
-  border-radius: 10px 0 0 10px;
-  border-width: 0px;
+#workspaces button {
+  padding: 0.3rem 0.6rem;
+  margin: 0.4rem 0.25rem;
+  border-radius: 6px;
+  /* background-color: #181825; */
+  background-color: #1e1e2e;
+  color: #cdd6f4;
 }
 
-#custom-reboot,
-#bluetooth,
-#battery,
-#pulseaudio,
-#backlight,
-#custom-temperature,
-#memory,
-#cpu{
-  background-color: rgba(15,27,53,0.9);
-  margin-top: 6px; /* 与屏幕顶部留出距离 */
-  /*margin-bottom: 4px;*/
-  padding: 4px 2px; /* 保持内部间距 */
-  border-width: 0px;
-}
-
-#custpm-temperature.critical,
-#pulseaudio.muted {
-  color: #FF0000;
-  padding-top: 0;
-}
-
-/* 鼠标悬停变亮一点 */
-#bluetooth:hover,
-#network:hover,
-/*#tray:hover,*/
-#backlight:hover,
-#battery:hover,
-#pulseaudio:hover,
-#custom-temperature:hover,
-#memory:hover,
-#cpu:hover,
-#clock:hover,
-#custom-lock:hover,
-#custom-reboot:hover,
-#custom-power:hover,
-/*#workspaces:hover,*/
-#window:hover {
-  background-color: rgba(70, 75, 90, 0.9);
-}
-
-/* 工作区激活状态高亮 */
-#workspaces button:hover{
-  background-color: rgba(97, 175, 239, 0.2);
-  padding: 2px 8px;
-  margin: 0 2px;
-  border-radius: 10px;
+#workspaces button:hover {
+  color: #1e1e2e;
+  background-color: #cdd6f4;
 }
 
 #workspaces button.active {
-  background-color: #61afef; /* 蓝色高亮 */
-  color: #ffffff;
-  padding: 2px 8px;
-  margin: 0 2px;
-  border-radius: 10px;
+  background-color: #1e1e2e;
+  color: #89b4fa;
 }
 
-/* 未激活工作区按钮 */
-#workspaces button {
-  background: transparent;
-  border: none;
-  color: #888888;
-  padding: 2px 8px;
-  margin: 0 2px;
-  font-weight: bold;
+#workspaces button.urgent {
+  background-color: #1e1e2e;
+  color: #f38ba8;
+}
+
+#clock,
+#pulseaudio,
+#custom-logo,
+#custom-power,
+#custom-spotify,
+#custom-notification,
+#battery,
+#cpu,
+#backlight,
+#tray,
+#memory,
+#window,
+#mpris {
+  padding: 0.3rem 0.6rem;
+  margin: 0.4rem 0.25rem;
+  border-radius: 6px;
+  /* background-color: #181825; */
+  background-color: #1e1e2e;
+}
+
+#mpris.playing {
+  color: #a6e3a1;
+}
+
+#mpris.paused {
+  color: #9399b2;
+}
+
+#custom-sep {
+  padding: 0px;
+  color: #585b70;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+#cpu {
+  color: #94e2d5;
+}
+
+#memory {
+  color: #cba6f7;
+}
+
+#clock {
+  color: #74c7ec;
+}
+
+#clock.simpleclock {
+  color: #89b4fa;
 }
 
 #window {
-  font-weight: 500;
-  font-style: italic;
+  color: #cdd6f4;
+}
+
+#pulseaudio {
+  color: #b4befe;
+}
+
+#pulseaudio.muted {
+  color: #a6adc8;
+}
+
+#custom-logo {
+  color: #89b4fa;
+}
+
+#custom-power {
+  color: #f38ba8;
+}
+
+#backlight {
+  color: #ffffff
+}
+
+#battery {
+  color: #28CD41;
+}
+
+#battery.critical{
+  color: #d63515;
+}
+
+#battery.warning{
+  color: #d0d615;
+}
+
+#custom-notification {
+  color: #ffffff;
+}
+
+tooltip {
+  background-color: #181825;
+  border: 2px solid #89b4fa;
 }
