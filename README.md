@@ -105,7 +105,7 @@ yay -S swaync hyprlock
 ### 2. Clone this repository
 
 ```bash id="1i7v4p"
-git clone https://github.com/your-username/hyprland-config.git ~/.config
+git clone https://github.com/VicMeGa/Hypr-Dotfiles
 ```
 
 ---
